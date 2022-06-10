@@ -1,0 +1,16 @@
+﻿@model PiattoViewModel
+@{
+    ViewBag.Readonly = false;
+}
+<h1>Inserisci nuovo piatto</h1>
+
+
+<form method="post">
+
+ <partial name="_Form" model ="Model" />
+
+ <input type="submit" value="Inserisci" class="btn btn-primary" />
+<input type="reset" value="Reset" class="btn btn-primary" />
+
+<a class="btn btn-primary" asp-controller="Piatto" asp-action="IndexPiatto">Indietro</a>
+  </form>

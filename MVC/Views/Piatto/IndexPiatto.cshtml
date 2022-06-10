@@ -1,0 +1,58 @@
+﻿@model ICollection<PiattoViewModel>
+<h1>Ecco la lista deI Piatti</h1>
+
+<a type=button class="btn btn-primary" asp-controller="Piatto" asp-action="CreatePiatto" >Inserisci nuovo Piatto</a>
+    
+<table class="table table-hover table-bordered table-striped">
+<thead>
+
+       <tr>
+         @* <th>ID</th>
+     
+           <th>Descrizione</th>
+             <th>Tipologia</th>
+           <th>Prezzo</th>*@ 
+            <th>Nome</th>
+             <th>Prezzo</th>
+               <th>Total</th>
+        </tr>
+</thead>
+ <tbody>
+        @{
+            string str_save = "";
+        }
+      @foreach(var item in Model)
+            {
+                <tr>    
+                    <td>@item.Nome</td>           
+                    <td>@item.Prezzo</td>
+                 <td>@item.Total</td>
+
+                    @* <td>@item.ID</td>*@
+                
+                    @*    <td>@item.Descrizione</td>
+                       <td>@item.Tipologia</td>
+                       <td>@item.Prezzo</td>
+                       <td>@item.MenuId</td>*@                
+          
+                     <td>
+                       @*pulsante "Visualizza Dettagli"*@
+                       <a class="bth bth primary" asp-controller="Piatto" asp-action="DetailsPiatto" asp-route-id="@item.ID" >Visualizza dettagli</a>
+                        <a type=button class="btn btn-primary" asp-controller="Piatto" asp-action="EditPiatto" asp-route-id="@item.ID" >Modifica Piatto</a>
+                       <a type=button class="btn btn-primary" asp-controller="Piatto" asp-action="DeletePiatto" asp-route-id="@item.ID" >Elimina</a>
+                    
+                   </td>
+                </tr>
+            }
+ 
+    </tbody>
+      <tfoot>
+
+        <tr>
+            <th>Totale</th>   
+            <th>@Model.Count</th>
+       
+           @*<th>Totale</th>*@
+        </tr>
+    </tfoot>
+</table>
