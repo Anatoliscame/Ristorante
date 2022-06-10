@@ -16,7 +16,7 @@ namespace MVC.Helper
 
             return new MenuViewModel
             {
-                ID = menu.ID,
+                ID = menu.ID_m,
                 Nome = menu.Nome,
                 Piatti = piattiViewModel 
             };
@@ -33,6 +33,7 @@ namespace MVC.Helper
                 Descrizione = piatto.Descrizione,
                 Tipologia = piatto.Tipologia,
                 Prezzo = piatto.Prezzo,
+                MenuId = piatto.MenuId
             
             };
         }
@@ -48,7 +49,7 @@ namespace MVC.Helper
 
             return new Menu
             {
-                ID = menuViewModel.ID,
+                ID_m = menuViewModel.ID, 
                 Nome = menuViewModel.Nome,
                 Piatti = piatti
 
@@ -66,7 +67,7 @@ namespace MVC.Helper
                 Descrizione = piattoViewModel.Descrizione,
                 Tipologia = piattoViewModel.Tipologia,
                 Prezzo = piattoViewModel.Prezzo
-
+               // MenuId = piattoViewModel.MenuId
 
             };
         }

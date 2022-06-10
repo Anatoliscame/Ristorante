@@ -5,7 +5,7 @@ namespace MVC.Models
 {
     public class MenuViewModel
     {
-        [DisplayName("Id Menu")]
+        //[DisplayName("Id Menu")]
         public int ID { get; set; }
 
         [Required]

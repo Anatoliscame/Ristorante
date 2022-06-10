@@ -8,14 +8,14 @@ namespace Core.Entities
 {
     public class Menu
     {
-        public int ID { get; set; }
+        public int ID_m { get; set; } 
         public string Nome { get; set; }
 
         public ICollection<Piatto> Piatti { get; set; } = new List<Piatto>();
 
         public string ToString()
         {
-            return $"{ID} - {Nome}";
+            return $"{ID_m} - {Nome}";
         }
     }
 }

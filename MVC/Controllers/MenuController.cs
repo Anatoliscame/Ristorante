@@ -34,7 +34,7 @@ namespace MVC.Controllers
       
         public IActionResult DetailsMenu(int id)
         {
-            var menu = _BL.GetAllMenu().FirstOrDefault(m => m.ID == id);
+            var menu = _BL.GetAllMenu().FirstOrDefault(m => m.ID_m == id);
 
             var menuViewModel = menu.ToMenuViewModel();
 

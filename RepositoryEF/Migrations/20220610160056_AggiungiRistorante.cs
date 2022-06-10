@@ -12,13 +12,13 @@ namespace RepositoryEF.Migrations
                 name: "Menu",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int", nullable: false)
+                    ID_m = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Menu", x => x.ID);
+                    table.PrimaryKey("PK_Menu", x => x.ID_m);
                 });
 
             migrationBuilder.CreateTable(
@@ -55,7 +55,7 @@ namespace RepositoryEF.Migrations
                         name: "FK_Piatto_Menu_MenuId",
                         column: x => x.MenuId,
                         principalTable: "Menu",
-                        principalColumn: "ID",
+                        principalColumn: "ID_m",
                         onDelete: ReferentialAction.Cascade);
                 });
 

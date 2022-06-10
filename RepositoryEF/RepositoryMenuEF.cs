@@ -43,7 +43,7 @@ namespace RepositoryEF
         {
             using (var ctx = new MasterContext())
             {
-                return ctx.ArrayMenu.Include(p => p.Piatti).FirstOrDefault(m => m.ID == id); 
+                return ctx.ArrayMenu.Include(p => p.Piatti).FirstOrDefault(m => m.ID_m == id); 
             }
         }
 

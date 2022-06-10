@@ -11,7 +11,7 @@ using RepositoryEF;
 namespace RepositoryEF.Migrations
 {
     [DbContext(typeof(MasterContext))]
-    [Migration("20220610124230_AggiungiRistorante")]
+    [Migration("20220610160056_AggiungiRistorante")]
     partial class AggiungiRistorante
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,17 +25,17 @@ namespace RepositoryEF.Migrations
 
             modelBuilder.Entity("Core.Entities.Menu", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("ID_m")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID_m"), 1L, 1);
 
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ID");
+                    b.HasKey("ID_m");
 
                     b.ToTable("Menu", (string)null);
                 });

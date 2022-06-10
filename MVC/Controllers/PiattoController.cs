@@ -52,6 +52,8 @@ namespace MVC.Controllers
             LoadViewBag();
             return View();
         }
+
+
         [Authorize(Policy = "Adm")]
         [HttpPost]
         public IActionResult CreatePiatto(PiattoViewModel piattoViewModel)

@@ -23,7 +23,7 @@ namespace Core.BusinessLayer
         }
         public Esito AggiungiMenu(Menu nuovoMenu)
         {
-            Menu menuRecuperato = _menuRepo.GetByMenuId(nuovoMenu.ID);
+            Menu menuRecuperato = _menuRepo.GetByMenuId(nuovoMenu.ID_m);
             if (menuRecuperato == null)
             {
                 _menuRepo.Add(nuovoMenu);
@@ -90,7 +90,7 @@ namespace Core.BusinessLayer
 
         public Esito InserisciNuovoPiatto(Piatto nuovoPiatto)
         {
-            Menu menuEsistente = _menuRepo.GetByMenuId(nuovoPiatto.ID);
+            Menu menuEsistente = _menuRepo.GetByMenuId(nuovoPiatto.MenuId);
             if (menuEsistente == null)
             {
                 return new Esito { Messaggio = "Piatto corso errato", IsOk = false };

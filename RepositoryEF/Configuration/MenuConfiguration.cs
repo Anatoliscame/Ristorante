@@ -9,7 +9,7 @@ namespace RepositoryEF.Configuration
         public void Configure(EntityTypeBuilder<Menu> builder)
         {
             builder.ToTable("Menu");
-            builder.HasKey(m => m.ID);
+            builder.HasKey(m => m.ID_m);
             builder.Property(m => m.Nome).IsRequired();
 
 
