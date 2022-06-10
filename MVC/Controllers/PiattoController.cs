@@ -17,7 +17,7 @@ namespace MVC.Controllers
             _BL = bl;
         }
 
- //decimal somma = 0;
+ decimal somma = 0;
         [HttpGet]  
        
         public IActionResult IndexPiatto()
@@ -27,13 +27,13 @@ namespace MVC.Controllers
             List<PiattoViewModel> piattoStudenteViewModel = new List<PiattoViewModel>();
             foreach (var item in piatti)
             {
-             //   somma = somma + item.Prezzo;
+               somma = somma + item.Prezzo;
              
                 piattoStudenteViewModel.Add(item.ToPiattoViewModel());
-           /*     foreach (var itemV in piattoStudenteViewModel) {
+               foreach (var itemV in piattoStudenteViewModel) {
                     itemV.Total = somma; 
                 }
-           */
+        
             }
             return View(piattoStudenteViewModel);
         }
@@ -107,7 +107,7 @@ namespace MVC.Controllers
                Esito esito = _BL.ModificaPiatto(piatto.ID, piatto.Nome, piatto.Descrizione, piatto.Tipologia, piatto.Prezzo, piatto.MenuId);
                 if (esito.IsOk == true)
                 {
-                    return RedirectToAction(nameof(Index));
+                    return RedirectToAction(nameof(IndexPiatto));
                 }
                 else
                 {
@@ -144,7 +144,7 @@ namespace MVC.Controllers
 
             if (esito.IsOk == true)
             {
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(IndexPiatto));
             }
             else
             {

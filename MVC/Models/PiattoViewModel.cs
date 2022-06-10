@@ -19,7 +19,7 @@ namespace MVC.Models
      
         public decimal Prezzo { get; set; }
         //[Required]
-      //  public decimal Total { get; set; }
+        public decimal Total { get; set; }
          [Required]
        public int MenuId { get; set; }
 
