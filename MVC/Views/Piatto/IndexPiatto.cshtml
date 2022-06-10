@@ -12,25 +12,25 @@
            <th>Descrizione</th>
              <th>Tipologia</th>
            <th>Prezzo</th>*@ 
+           <th>ID</th>
             <th>Nome</th>
              <th>Prezzo</th>
-               <th>Total</th>
+     
         </tr>
 </thead>
  <tbody>
-        @{
-            string str_save = "";
-        }
+
       @foreach(var item in Model)
             {
                 <tr>    
+                     <td>@item.ID</td>  
                     <td>@item.Nome</td>           
                     <td>@item.Prezzo</td>
-                 <td>@item.Total</td>
+              
 
                     @* <td>@item.ID</td>*@
-                
-                    @*    <td>@item.Descrizione</td>
+                  @*    <td>@item.Total</td>
+                     <td>@item.Descrizione</td>
                        <td>@item.Tipologia</td>
                        <td>@item.Prezzo</td>
                        <td>@item.MenuId</td>*@                

@@ -59,7 +59,7 @@ namespace MVC.Controllers
                 Esito esito = _BL.AggiungiMenu(menu);
                 if (esito.IsOk == true)
                 {
-                    return RedirectToAction(nameof(Index));
+                    return RedirectToAction(nameof(IndexMenu));
                 }
                 else
                 {

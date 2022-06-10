@@ -11,7 +11,7 @@ namespace MVC.Models
         [Required]
         public string Nome { get; set; }
 
-        public ICollection<PiattoViewModel>? Piatti { get; set; } = new List<PiattoViewModel>();
+        public ICollection<PiattoViewModel> Piatti { get; set; } = new List<PiattoViewModel>();
 
         public string ToString()
         {

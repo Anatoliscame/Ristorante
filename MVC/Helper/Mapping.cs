@@ -66,8 +66,8 @@ namespace MVC.Helper
                 Nome = piattoViewModel.Nome,
                 Descrizione = piattoViewModel.Descrizione,
                 Tipologia = piattoViewModel.Tipologia,
-                Prezzo = piattoViewModel.Prezzo
-               // MenuId = piattoViewModel.MenuId
+                Prezzo = piattoViewModel.Prezzo,
+                MenuId = piattoViewModel.MenuId
 
             };
         }
