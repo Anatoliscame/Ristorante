@@ -1,8 +1,9 @@
 ﻿@model ICollection<MenuViewModel>
 <h1>Ecco la lista deI Menu</h1>
-
+  @if (User.IsInRole("Ristoratore"))
+    {
 <a type=button class="btn btn-primary" asp-controller="Menu" asp-action="CreateMenu" >Inserisci nuovo Menu</a>
-    
+    } 
 <table class="table table-hover table-bordered table-striped">
 <thead>
 
@@ -21,8 +22,10 @@
                       <td>@item.Nome</td>
                          <td>
                        @*pulsante "Visualizza Dettagli"*@
+                   
                        <a class="bth bth primary" asp-controller="Menu" asp-action="DetailsMenu" asp-route-id="@item.ID" >Visualizza dettagli</a>
  
+
                    </td>
                 </tr>
             }

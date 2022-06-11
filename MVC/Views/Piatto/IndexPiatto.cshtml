@@ -1,8 +1,9 @@
 ﻿@model ICollection<PiattoViewModel>
 <h1>Ecco la lista deI Piatti</h1>
-
-<a type=button class="btn btn-primary" asp-controller="Piatto" asp-action="CreatePiatto" >Inserisci nuovo Piatto</a>
-    
+               @if (User.IsInRole("Ristoratore"))
+{
+    <a type=button class="btn btn-primary" asp-controller="Piatto" asp-action="CreatePiatto" >Inserisci nuovo Piatto</a>
+    }
 <table class="table table-hover table-bordered table-striped">
 <thead>
 
@@ -23,7 +24,7 @@
       @foreach(var item in Model)
             {
                 <tr>    
-                     <td>@item.ID</td>  
+                    <td>@item.ID</td>  
                     <td>@item.Nome</td>           
                     <td>@item.Prezzo</td>
               
@@ -38,9 +39,10 @@
                      <td>
                        @*pulsante "Visualizza Dettagli"*@
                        <a class="bth bth primary" asp-controller="Piatto" asp-action="DetailsPiatto" asp-route-id="@item.ID" >Visualizza dettagli</a>
-                        <a type=button class="btn btn-primary" asp-controller="Piatto" asp-action="EditPiatto" asp-route-id="@item.ID" >Modifica Piatto</a>
+                        @if (User.IsInRole("Ristoratore")) { 
+                       <a type=button class="btn btn-primary" asp-controller="Piatto" asp-action="EditPiatto" asp-route-id="@item.ID" >Modifica Piatto</a>
                        <a type=button class="btn btn-primary" asp-controller="Piatto" asp-action="DeletePiatto" asp-route-id="@item.ID" >Elimina</a>
-                    
+                            } 
                    </td>
                 </tr>
             }

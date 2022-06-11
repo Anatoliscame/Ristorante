@@ -18,7 +18,20 @@ namespace MVC.Controllers
             return View();
         }
 
+        public IActionResult IndexCliente() 
+        {
+            return View();
+        }
 
+        public IActionResult Benvenuti()
+        {
+            return View();
+        }
+
+        public IActionResult IndexAdmin() 
+        {
+            return View();
+        }
         public IActionResult Contatto()
         {
             return View();

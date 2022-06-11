@@ -11,4 +11,9 @@
     <ProjectReference Include="..\RepositoryEF\RepositoryEF.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\AdminPagina\" />
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
 </Project>
